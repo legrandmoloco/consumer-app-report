@@ -1,0 +1,81 @@
+Advertiser Genre,Publisher Genre,CPP
+Entertainment,Books & Reference,81
+Entertainment,Entertainment,98
+Entertainment,Gaming,91
+Entertainment,Health & Fitness,179
+Entertainment,Other Consumer Publishers,115
+Entertainment,Photo & Video,132
+Entertainment,Social Media,63
+Entertainment,Utility & Productivity,114
+Finance,Books & Reference,129
+Finance,Entertainment,81
+Finance,Gaming,61
+Finance,Health & Fitness,61
+Finance,Other Consumer Publishers,110
+Finance,Photo & Video,526
+Finance,Social Media,120
+Finance,Utility & Productivity,131
+Food & Drink,Books & Reference,89
+Food & Drink,Entertainment,139
+Food & Drink,Gaming,94
+Food & Drink,Health & Fitness,62
+Food & Drink,Other Consumer Publishers,130
+Food & Drink,Photo & Video,171
+Food & Drink,Social Media,60
+Food & Drink,Utility & Productivity,219
+Gaming,Books & Reference,64
+Gaming,Entertainment,88
+Gaming,Gaming,98
+Gaming,Health & Fitness,89
+Gaming,Other Consumer Publishers,133
+Gaming,Photo & Video,607
+Gaming,Social Media,68
+Gaming,Utility & Productivity,131
+Other Consumer Advertisers,Books & Reference,82
+Other Consumer Advertisers,Entertainment,122
+Other Consumer Advertisers,Gaming,63
+Other Consumer Advertisers,Health & Fitness,115
+Other Consumer Advertisers,Other Consumer Publishers,96
+Other Consumer Advertisers,Photo & Video,442
+Other Consumer Advertisers,Social Media,68
+Other Consumer Advertisers,Utility & Productivity,131
+RMG,Books & Reference,117
+RMG,Entertainment,97
+RMG,Gaming,89
+RMG,Health & Fitness,63
+RMG,Other Consumer Publishers,101
+RMG,Photo & Video,135
+RMG,Social Media,133
+RMG,Utility & Productivity,110
+Shopping,Books & Reference,88
+Shopping,Entertainment,120
+Shopping,Gaming,103
+Shopping,Health & Fitness,108
+Shopping,Other Consumer Publishers,150
+Shopping,Photo & Video,72
+Shopping,Social Media,99
+Shopping,Utility & Productivity,94
+Social Media,Books & Reference,61.41
+Social Media,Entertainment,107.37
+Social Media,Gaming,78
+Social Media,Health & Fitness,69.02
+Social Media,Other Consumer Publishers,89.36
+Social Media,Photo & Video,172.66
+Social Media,Social Media,174.71
+Social Media,Utility & Productivity,228.01
+Travel,Books & Reference,108.92
+Travel,Entertainment,107.52
+Travel,Gaming,64.76
+Travel,Health & Fitness,54.67
+Travel,Other Consumer Publishers,94.31
+Travel,Photo & Video,522.16
+Travel,Social Media,99.26
+Travel,Utility & Productivity,192.66
+Utility & Productivity,Books & Reference,75.42
+Utility & Productivity,Entertainment,71.29
+Utility & Productivity,Gaming,46.16
+Utility & Productivity,Health & Fitness,110.4
+Utility & Productivity,Other Consumer Publishers,106.22
+Utility & Productivity,Photo & Video,473.38
+Utility & Productivity,Social Media,167.01
+Utility & Productivity,Utility & Productivity,223.3

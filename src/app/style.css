@@ -1,0 +1,921 @@
+.charts-text-body {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.25;
+  font-family: "Montserrat", sans-serif;
+}
+.charts-text-body-bold {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.25;
+  font-family: "Montserrat", sans-serif;
+}
+.charts-text-value {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
+}
+.charts-text-value-small {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
+}
+
+.charts-text-white {
+  fill: #ffffff;
+}
+
+.charts-line-dashed {
+  stroke: #d9d9d9;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 0.1 5;
+
+  &.charts-line-dashed-white {
+    stroke: #fff;
+  }
+  &.charts-line-dashed-blue {
+    stroke: #0280fb;
+  }
+  &.charts-line-dashed-black {
+    stroke: #000;
+  }
+}
+
+/* multi select style*/
+.select2-container {
+  border: none;
+
+  .select2-selection--multiple {
+    background-color: transparent !important;
+    border-radius: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .select2-selection__choice {
+    background-color: #f2f2f2 !important;
+    border-color: #f2f2f2 !important;
+    color: black !important;
+    border-radius: 10px !important;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px !important;
+    margin-top: 10px !important;
+  }
+  .select2-selection--clearable {
+    color: white;
+  }
+  .select2-selection__choice__remove {
+    color: black !important;
+    border-right-width: 0px !important;
+  }
+
+  .select2-results__option {
+    color: black;
+    font-size: 14px;
+    border-radius: 10px;
+    padding-left: 10px;
+
+    &.select2-results__option--selected {
+      background-color: #efefef;
+    }
+
+    &.select2-results__option--highlighted {
+      background-color: #040078 !important;
+    }
+  }
+}
+/* viz 10*/
+.form-block-4
+  .select2-container
+  .select2-container--focus
+  .select2-selection--multiple {
+  border-color: black !important;
+}
+/* viz 12*/
+.form-block-3
+  .select2-container
+  .select2-container--focus
+  .select2-selection--multiple {
+  border-color: white !important;
+}
+/*
+Tooltip for multiple visualizations
+*/
+.tooltip {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  border: 0.5px solid #000;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  pointer-events: none;
+
+  p {
+    color: black;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  p.tooltip-title {
+    font-weight: 700;
+  }
+  p.tooltip-value {
+    font-weight: 700;
+    font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
+  }
+}
+
+/*
+VIZ 1
+*/
+#vis1 {
+  .timeline path {
+    transition: all 0.3s ease-in-out;
+  }
+  .timeline-label {
+    transition: all 0.3s ease-in-out;
+  }
+  .categories rect,
+  text {
+    transition: all 0.3s ease-in-out;
+  }
+  .timeline-label {
+    font-size: 16px;
+  }
+}
+
+/* 
+VIZ 2
+*/
+:root {
+  --sankey-active-area: #040078;
+  --sankey-inactive-area: #c5c4dc;
+  --sankey-inactive-area-IAE: #dff9f1;
+  --sankey-active-area-IAE: #60e2b7;
+
+  --sankey-inactive-bar: #040078;
+  --sankey-active-bar: #fff;
+  --sankey-inactive-bar-IAE: #60e2b7;
+  --sankey-active-bar-IAE: #fff;
+
+  --sankey-text-IAE: #12976b;
+
+  --sankey-labels: #03004c;
+}
+
+.vis2-toggle {
+  cursor: pointer;
+
+  svg g.Handle {
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.vis2-sankey {
+  margin-bottom: -80px; /* reduce space at the bottom of the sankey to show source closer to sankey */
+
+  path {
+    transition: fill 0.3s ease-in-out;
+  }
+
+  path.Independent-App-Ecosystem {
+    fill: var(--sankey-text-IAE);
+  }
+}
+
+.vis2-sankey-Consumer {
+  g.consumer path {
+    fill: var(--sankey-active-area);
+  }
+  path.consumer {
+    fill: var(--sankey-active-area);
+  }
+  path.consumer.IAE {
+    fill: var(--sankey-active-area-IAE);
+  }
+  path.bar.consumer {
+    stroke: var(--sankey-active-bar);
+  }
+  path.bar.consumer.IAE {
+    stroke: var(--sankey-active-bar-IAE);
+  }
+  rect.bar.level-3.inactive,
+  path.bar.level-3.inactive {
+    fill: var(--sankey-inactive-area);
+  }
+  rect.bar.level-3.inactive.IAE,
+  path.bar.level-3.inactive.IAE {
+    fill: var(--sankey-inactive-area-IAE);
+  }
+
+  g.gaming path {
+    fill: var(--sankey-inactive-area);
+  }
+  path.gaming {
+    fill: var(--sankey-inactive-area);
+  }
+  path.gaming.IAE {
+    fill: var(--sankey-inactive-area-IAE);
+  }
+  path.bar.gaming {
+    stroke: var(--sankey-inactive-bar);
+  }
+  path.bar.gaming.IAE {
+    stroke: var(--sankey-inactive-bar-IAE);
+  }
+
+  g.consumer.value-labels path {
+    fill: var(--sankey-labels);
+  }
+  g.consumer.value-labels path.IAE {
+    fill: var(--sankey-text-IAE);
+  }
+  g.gaming.value-labels path {
+    opacity: 0;
+  }
+  path.text-label.consumer {
+    fill: white;
+  }
+  path.text-label.gaming {
+    opacity: 0;
+  }
+}
+.vis2-sankey-Gaming {
+  g.consumer path {
+    fill: var(--sankey-inactive-area);
+  }
+  path.consumer {
+    fill: var(--sankey-inactive-area);
+  }
+  path.consumer.IAE {
+    fill: var(--sankey-inactive-area-IAE);
+  }
+  path.bar.consumer {
+    stroke: var(--sankey-inactive-bar);
+  }
+  path.bar.consumer.IAE {
+    stroke: var(--sankey-inactive-bar-IAE);
+  }
+  rect.bar.level-3.inactive,
+  path.bar.level-3.inactive {
+    fill: var(--sankey-inactive-area);
+  }
+  rect.bar.level-3.inactive.IAE,
+  path.bar.level-3.inactive.IAE {
+    fill: var(--sankey-inactive-area-IAE);
+  }
+
+  g.gaming path {
+    fill: var(--sankey-active-area);
+  }
+  path.gaming {
+    fill: var(--sankey-active-area);
+  }
+  path.gaming.IAE {
+    fill: var(--sankey-active-area-IAE);
+  }
+  path.bar.gaming {
+    stroke: var(--sankey-active-bar);
+  }
+  path.bar.gaming.IAE {
+    stroke: var(--sankey-active-bar-IAE);
+  }
+
+  g.gaming.value-labels path {
+    fill: var(--sankey-labels);
+  }
+  g.gaming.value-labels path.IAE {
+    fill: var(--sankey-active-area-IAE);
+  }
+  g.consumer.value-labels path {
+    opacity: 0;
+  }
+  path.text-label.gaming {
+    fill: white;
+  }
+  path.text-label.consumer {
+    opacity: 0;
+  }
+}
+
+/*
+VIZ 4
+*/
+#vis4 {
+  background-color: #040078;
+  svg {
+    overflow: visible;
+  }
+}
+
+/*
+VIZ 6
+*/
+#vis6 {
+  svg {
+    overflow: visible;
+  }
+}
+
+/*
+VIZ 8
+*/
+#vis8 {
+  .viz8-container-inner {
+    position: relative;
+  }
+
+  .category-label div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    span {
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      background-color: #f2f2f2;
+      border-radius: 20px;
+      padding: 8px 16px;
+      white-space: nowrap;
+    }
+  }
+
+  path {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .show-more {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    border: 1px solid black;
+    width: fit-content;
+    margin: 24px auto 0 auto;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    svg {
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: bottom;
+    }
+  }
+}
+
+/*
+VIZ 9
+*/
+#vis9 {
+  .vis-container-inner {
+    position: relative;
+
+    svg {
+      overflow: visible;
+    }
+  }
+}
+
+/*
+VIZ 10
+*/
+#vis10 {
+  .vis-container-inner {
+    position: relative;
+
+    .mobile-section {
+      position: relative;
+    }
+
+    svg {
+      overflow: visible;
+    }
+
+    .circles circle {
+      cursor: pointer;
+      transition: fill 0.3s ease-in-out;
+      stroke: #f2f2f2;
+      stroke-width: 0.25px;
+    }
+
+    .viz10-empty-section {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      p {
+        color: #000;
+        line-height: 1.25;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/*
+VIZ 11
+*/
+
+/* set via JS, here just for fallback */
+:root {
+  --vis11-main-color: #60e2b7;
+  --vis11-secondary-color: #ccf5e8;
+}
+
+#vis11 {
+  max-width: 736px;
+
+  .vis-container-inner {
+    position: relative;
+    margin-top: 49px; /* half main icon height */
+  }
+
+  .label,
+  .sublabel,
+  .title {
+    font-size: 14px;
+    line-height: 1.25;
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+    margin: 0;
+  }
+  .label {
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .sublabel {
+    font-weight: 400;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1;
+    margin-bottom: -5px;
+    text-align: center;
+  }
+  .number {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 100%;
+    font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
+    color: #000000;
+    margin: 0;
+  }
+  .vis-11-part {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  .vis-11-top {
+    background-color: var(--vis11-main-color);
+    padding: 60px 30px 30px 30px;
+  }
+  .vis-11-bottom {
+    background-color: var(--vis11-secondary-color);
+    padding: 30px 30px 30px 30px;
+  }
+
+  .vis-11-main-category-icon {
+    position: absolute;
+    top: -49px;
+    left: calc(50% - 49px);
+    width: 98px;
+    height: 98px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      circle {
+        fill: var(--vis11-secondary-color);
+      }
+      path {
+        fill: var(--vis11-main-color);
+      }
+    }
+  }
+
+  .vis-11-top-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+    grid-column-gap: 20px;
+    /* grid-row-gap: 10px;  -> not set after top ad category line was hidden */
+
+    .element1,
+    .element2 {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      p {
+        z-index: 1;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: visible;
+
+        .dot {
+          fill: var(--vis11-secondary-color);
+        }
+      }
+    }
+    .element1 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    .element2 {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    .element3 {
+      display: none; /* just hidden for now in case we need it again */
+      /* display: flex; */
+
+      grid-area: 2 / 1 / 3 / 3;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pill-list {
+      grid-area: 3 / 2 / 4 / 3;
+      display: flex;
+      gap: 4px;
+      flex-wrap: nowrap;
+    }
+
+    .pill {
+      background-color: var(--vis11-secondary-color);
+      border-radius: 50px;
+      padding: 4px 14px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .dots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    .dot {
+      background-color: var(--vis11-secondary-color);
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+    }
+  }
+
+  .vis-container-inner.mobile {
+    .vis-11-bottom-top-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .vis-11-app .app-list {
+      flex-direction: row;
+
+      .app-item {
+        flex-direction: column;
+        flex-basis: 33.33%;
+        flex-grow: 1;
+        gap: 8px;
+
+        .sublabel {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .vis-11-bottom-top-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    margin-bottom: 34px;
+
+    .left {
+      grid-area: 1 / 1 / 2 / 2;
+
+      .vis-11-time-grid {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: repeat(3, 30px);
+        grid-column-gap: 5px;
+        grid-row-gap: 16px;
+        margin-top: 16px;
+
+        .element1 {
+          grid-area: 1 / 1 / 2 / 2;
+          display: flex;
+          align-items: center;
+        }
+        .element2 {
+          grid-area: 1 / 2 / 2 / 3;
+        }
+        .element3 {
+          grid-area: 2 / 1 / 3 / 2;
+          display: flex;
+          align-items: center;
+        }
+        .element4 {
+          grid-area: 2 / 2 / 3 / 3;
+        }
+        .element5 {
+          grid-area: 3 / 1 / 4 / 2;
+          display: flex;
+          align-items: center;
+        }
+        .element6 {
+          grid-area: 3 / 2 / 4 / 3;
+        }
+        .bar-container {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+        }
+        .number {
+          font-size: 26px;
+        }
+        span {
+          width: 90px;
+        }
+        .bar {
+          background-color: var(--vis11-main-color);
+          display: block;
+          height: 30px;
+          border-radius: 5px;
+          transition: width 0.4s ease-in-out;
+        }
+      }
+    }
+    .right {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+  }
+
+  .vis-11-app {
+    .app-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 16px;
+
+      .app-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .position {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          background-color: var(--vis11-main-color);
+          margin: 0;
+          flex-shrink: 0;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #000;
+          font-family: "Spacegrotesk", "Space Grotesk", sans-serif;
+          font-weight: 700;
+        }
+        .number {
+          font-size: 14px;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .vis-11-grid-gender,
+  .vis-11-grid-age {
+    display: grid;
+    grid-template-rows: auto 30px;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+    margin-top: 16px;
+    margin-top: 10px;
+    transition: all 0.4s ease-in-out;
+
+    .bar {
+      background-color: var(--vis11-main-color);
+      border-radius: 5px;
+      text-align: center;
+      border-left: 2px solid var(--vis11-secondary-color);
+      border-right: 2px solid var(--vis11-secondary-color);
+      &.tiny {
+        display: none;
+      }
+    }
+    .group {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      &.tiny {
+        display: none;
+      }
+      &.small {
+        max-width: 35px;
+      }
+    }
+    .number {
+      font-size: 14px;
+      line-height: 30px;
+    }
+    .sublabel {
+      text-align: center;
+    }
+  }
+}
+
+#vis11_categories .category-list {
+  max-width: 736px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  list-style: none;
+  padding: 0;
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f2f2f2;
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.25;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+
+    .category-icon {
+      width: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        /* fill: #666666; */
+        circle {
+          transition: fill 0.3s ease-in-out;
+        }
+      }
+    }
+
+    span {
+      padding: 6px 12px 6px 0;
+    }
+
+    &.active {
+      background-color: var(--vis11-main-color);
+      font-weight: 700;
+
+      .category-icon svg circle {
+        fill: var(--vis11-main-color);
+      }
+    }
+  }
+}
+
+/* 
+VIZ 12
+color fills for ridge line plot
+first, forth, and seventh row are the same color
+second, fifth, and eighth row are the same color
+third, sixth, and ninth row are the same color
+this is to create a pattern of three colors that repeats every three rows
+*/
+.vis12-row:nth-child(3n + 1) path {
+  fill: #16d2ff;
+}
+.vis12-row:nth-child(3n + 2) path {
+  fill: #c368f9;
+}
+.vis12-row:nth-child(3n + 3) path {
+  fill: #60e2b7;
+}
+.vis12-row:nth-child(3n + 4) path {
+  fill: #876aff;
+}
+.vis12-row:nth-child(3n + 5) path {
+  fill: #0280fb;
+}
+
+.vis12-row path {
+  filter: drop-shadow(0 -2px 1px #040078);
+}
+
+/*
+VIZ 13
+*/
+
+#vis13 {
+  svg {
+    overflow: visible;
+  }
+  .vis-container-inner {
+    position: relative;
+  }
+
+  .inactive {
+    pointer-events: none;
+  }
+}
+
+#vis13_categories .category-list {
+  max-width: 736px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f2f2f2;
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.25;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+
+    .category-icon {
+      width: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        flex-basis: 34px;
+
+        circle {
+          transition: fill 0.3s ease-in-out;
+        }
+      }
+    }
+
+    span {
+      padding: 6px 12px 6px 0;
+    }
+
+    &.active {
+      background-color: var(--vis13-main-color);
+      font-weight: 700;
+
+      .category-icon svg circle {
+        fill: var(--vis13-main-color);
+      }
+    }
+  }
+}
