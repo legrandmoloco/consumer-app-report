@@ -1,64 +1,148 @@
 "use client";
 
-import { Section, Block, Link } from "@/devlink/_Builtin";
+import { Section, Block } from "@/devlink/_Builtin";
+import { useEffect } from "react";
+import Script from "next/script";
 
 export default function Home() {
+  useEffect(() => {
+    // Load the script module after component mounts
+    import("./script.js").catch(console.error);
+  }, []);
+
   return (
-    <Section
-      tag="section"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Block tag="div" className="container">
-        <Block
-          tag="div"
-          className="hero-split"
-          style={{
+    <>
+      <style jsx global>{`
+        :root {
+          --black: black;
+          --font: Montserrat, sans-serif;
+          --blue-dark: #000a73;
+          --h1: 2.8rem;
+          --h2: 2.7rem;
+          --letter-spacing: -1px;
+          --h3: 1.5rem;
+          --h4: 1.2rem;
+          --h5: 1rem;
+          --h6: 0.8rem;
+          --paragraph: 1rem;
+          --quote: 1.35rem;
+          --blue-medium: #3381f3;
+          --white: white;
+          --purple: #876aff;
+          --yellow-medium: #f8d549;
+          --gray-20: #ecedee;
+          --black-opaque-shadow: #0000004d;
+          --partner-tooltip: #0000004d;
+          --gray-50: grey;
+          --yellow-dark: #f1b13f;
+          --blue: #2b24f5;
+          --soft-blue: #d8e8f6;
+          --blue-light: #b5d6f14f;
+          --paragraph-small: 0.875rem;
+          --shadow: #00000012;
+          --gray-light: #f5f5f6;
+          --dark-opaque: #0009;
+          --purple-button-hover: #9b29e8;
+          --pink: #b761f2;
+          --bright-blue: #05caff;
+          --large-h1: 4rem;
+          --quote-2: 1.5rem;
+          --transparent: #fff0;
+          --paragraph-large: var(--h4);
+          --navy: #050348;
+          --teal: #60e2b7;
+          --blurple: #532aff;
+          --blue-2: #0280fb;
+          --blue-2-hover: #4ea8ff;
+          --p2: 1.1rem;
+          --moloco-blue: var(--gray-50);
+        }
+        div.vis-container {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        svg {
+          display: block;
+        }
+      `}</style>
+
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
+        strategy="beforeInteractive"
+      />
+
+      <link
+        href="https://cdn.prod.website-files.com/6840aa0a8618d62fc45c880b/css/moloco-dev-fe1ad8f7cd7b0044412719ec9624.shared.f58cd39f7.min.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link rel="stylesheet" href="./style.css" />
+
+      <Section tag="section" style={{ padding: "20px" }}>
+        <Block tag="div" className="container">
+          <h1 style={{
+            fontSize: "2.8rem",
+            fontWeight: 700,
             textAlign: "center",
-            maxWidth: "600px",
-            margin: "0 auto",
-          }}
-        >
-          <h1
-            className="margin-bottom-24px"
-            style={{
-              fontSize: "2.5rem",
-              fontWeight: 700,
-              background: "linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Welcome to Webflow Cloud
+            marginBottom: "40px"
+          }}>
+            Consumer Report Test Document
           </h1>
-          <Block tag="p" className="margin-bottom-24px">
-            This is a simple test using Basic components with enhanced styling.
-          </Block>
-          <div style={{ marginTop: "12px" }}>
-            <Link
-              button={true}
-              options={{
-                href: "https://developers.webflow.com/webflow-cloud/getting-started",
-              }}
-              className="button-primary"
-              style={{
-                borderRadius: "4px",
-                background: "#146ef5",
-                color: "#ffffff",
-                boxShadow:
-                  "0px 0.5px 1px rgba(0, 0, 0, 0.25), inset 0px 29px 23px -16px rgba(255, 255, 255, 0.04), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.2)",
-              }}
-            >
-              Get Started
-            </Link>
+
+          <div>
+            <select id="vis1_dropdown_countries"></select>
+            <div id="vis1"></div>
+          </div>
+
+          <div>
+            <select id="vis12_dropdown_countries" name="field"></select>
+            <div id="vis12"></div>
+          </div>
+
+          <div id="vis10"></div>
+
+          <div>
+            <div id="vis13_categories"></div>
+            <div id="vis13"></div>
+          </div>
+
+          <div>
+            <select id="vis11_dropdown_countries"></select>
+            <div id="vis11_categories"></div>
+            <div id="vis11"></div>
+          </div>
+
+          <div id="vis2">
+            <img
+              src="https://raw.githubusercontent.com/parabolestudio/molococonsumerreport/refs/heads/main/assets/viz2-embeds/viz2-desktop.svg"
+              alt="Visualization 2"
+            />
+          </div>
+
+          <div id="vis4"></div>
+
+          <div>
+            <select id="vis6_dropdown_regions"></select>
+            <div id="vis6-legend-growth"></div>
+            <div id="vis6"></div>
+          </div>
+
+          <div>
+            <select id="vis7_dropdown_countries" name="field"></select>
+            <div id="vis7"></div>
+          </div>
+
+          <div>
+            <select id="vis8_dropdown_countries" name="field"></select>
+            <div id="vis8"></div>
+          </div>
+
+          <div>
+            <select id="vis9_dropdown_countries"></select>
+            <div id="vis9"></div>
           </div>
         </Block>
-      </Block>
-    </Section>
+      </Section>
+    </>
   );
 }
